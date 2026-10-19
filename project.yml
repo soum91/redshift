@@ -1,0 +1,37 @@
+name: Infra
+options:
+  bundleIdPrefix: com.soum91
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.10"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGNING_ALLOWED: NO
+    CODE_SIGNING_REQUIRED: NO
+    CODE_SIGN_IDENTITY: ""
+targets:
+  Infra:
+    type: application
+    platform: iOS
+    sources:
+      - path: Infra
+    info:
+      path: Infra/Info.plist
+      properties:
+        CFBundleDisplayName: Infra
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        ITSAppUsesNonExemptEncryption: false
+        NSLocalNetworkUsageDescription: Infra talks to your IR blaster directly over Wi-Fi to send and learn remote buttons.
+        NSPhotoLibraryAddUsageDescription: Infra saves the Smart Life login QR to Photos so you can pick it from Smart Life's scanner.
+        LSApplicationQueriesSchemes: [smartlife, tuyasmart]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.soum91.infra
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        GENERATE_INFOPLIST_FILE: NO
