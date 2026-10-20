@@ -21,6 +21,15 @@
       "versions": [
         {
           "version": "1.0.0",
+          "buildVersion": "4",
+          "date": "2026-10-20T18:51:05Z",
+          "localizedDescription": "- CI: publish an AltStore-format source for FlareStore / AltStore / SideStore (9637185)\n- Backfill script: repair mis-tagged releases [skip ci] (a2a51c1)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-4/Redshift-1.0.0-build-4.ipa",
+          "size": 652066,
+          "minOSVersion": "17.0"
+        },
+        {
+          "version": "1.0.0",
           "buildVersion": "3",
           "date": "2026-10-20T18:47:44Z",
           "localizedDescription": "- Info.plist: take version and build number from MARKETING_VERSION / CURRENT_PROJECT_VERSION (262f14e)",
@@ -30,10 +39,10 @@
         }
       ],
       "version": "1.0.0",
-      "versionDate": "2026-10-20T18:47:44Z",
-      "versionDescription": "- Info.plist: take version and build number from MARKETING_VERSION / CURRENT_PROJECT_VERSION (262f14e)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-3/Redshift-1.0.0-build-3.ipa",
-      "size": 652065,
+      "versionDate": "2026-10-20T18:51:05Z",
+      "versionDescription": "- CI: publish an AltStore-format source for FlareStore / AltStore / SideStore (9637185)\n- Backfill script: repair mis-tagged releases [skip ci] (a2a51c1)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-4/Redshift-1.0.0-build-4.ipa",
+      "size": 652066,
       "appPermissions": {}
     }
   ],
