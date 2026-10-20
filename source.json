@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.5",
+          "buildVersion": "5",
+          "date": "2026-10-20T20:21:54Z",
+          "localizedDescription": "- CI: version string carries the build number (<version>.<build>) (87e983b)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-5/Redshift-1.0.0-build-5.ipa",
+          "size": 652061,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0",
           "buildVersion": "4",
           "date": "2026-10-20T18:51:05Z",
@@ -38,11 +47,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0",
-      "versionDate": "2026-10-20T18:51:05Z",
-      "versionDescription": "- CI: publish an AltStore-format source for FlareStore / AltStore / SideStore (9637185)\n- Backfill script: repair mis-tagged releases [skip ci] (a2a51c1)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-4/Redshift-1.0.0-build-4.ipa",
-      "size": 652066,
+      "version": "1.0.0.5",
+      "versionDate": "2026-10-20T20:21:54Z",
+      "versionDescription": "- CI: version string carries the build number (<version>.<build>) (87e983b)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-5/Redshift-1.0.0-build-5.ipa",
+      "size": 652061,
       "appPermissions": {}
     }
   ],
