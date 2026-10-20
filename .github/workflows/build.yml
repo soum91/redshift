@@ -51,6 +51,8 @@ jobs:
           cp -R build/Build/Products/Release-iphoneos/Redshift.app Payload/
           /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD" Payload/Redshift.app/Info.plist
           VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" Payload/Redshift.app/Info.plist)
+          # Sideloaders (FlareStore etc.) only compare the version string, so make it <version>.<build>.
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION.$BUILD" Payload/Redshift.app/Info.plist
           codesign --force --sign - --timestamp=none Payload/Redshift.app
           IPA="$APP-$VERSION-build-$BUILD.ipa"
           zip -qr "$IPA" Payload
