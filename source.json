@@ -1,0 +1,41 @@
+{
+  "name": "Redshift by soum91",
+  "identifier": "io.github.soum91.redshift",
+  "subtitle": "Local Wi-Fi IR remote",
+  "description": "Remote for a Tuya Wi-Fi IR blaster controlled locally over Wi-Fi: TV, sound bar, heater and anything else the blaster has learned.",
+  "iconURL": "https://raw.githubusercontent.com/soum91/redshift/main/Redshift/Assets.xcassets/AppIcon.appiconset/icon.png",
+  "website": "https://github.com/soum91/redshift",
+  "sourceURL": "https://raw.githubusercontent.com/soum91/redshift/source/source.json",
+  "tintColor": "FF3B30",
+  "apps": [
+    {
+      "name": "Redshift",
+      "bundleIdentifier": "com.soum91.redshift",
+      "developerName": "soum91",
+      "subtitle": "Local Wi-Fi IR remote",
+      "localizedDescription": "Remote for a Tuya Wi-Fi IR blaster controlled locally over Wi-Fi: TV, sound bar, heater and anything else the blaster has learned.",
+      "iconURL": "https://raw.githubusercontent.com/soum91/redshift/main/Redshift/Assets.xcassets/AppIcon.appiconset/icon.png",
+      "tintColor": "FF3B30",
+      "category": "utilities",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "buildVersion": "3",
+          "date": "2026-10-20T18:47:44Z",
+          "localizedDescription": "- Info.plist: take version and build number from MARKETING_VERSION / CURRENT_PROJECT_VERSION (262f14e)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-3/Redshift-1.0.0-build-3.ipa",
+          "size": 652065,
+          "minOSVersion": "17.0"
+        }
+      ],
+      "version": "1.0.0",
+      "versionDate": "2026-10-20T18:47:44Z",
+      "versionDescription": "- Info.plist: take version and build number from MARKETING_VERSION / CURRENT_PROJECT_VERSION (262f14e)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-3/Redshift-1.0.0-build-3.ipa",
+      "size": 652065,
+      "appPermissions": {}
+    }
+  ],
+  "news": []
+}
