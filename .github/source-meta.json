@@ -1,0 +1,13 @@
+{
+  "name": "Redshift",
+  "sourceName": "Redshift by soum91",
+  "sourceIdentifier": "io.github.soum91.redshift",
+  "subtitle": "Local Wi-Fi IR remote",
+  "description": "Remote for a Tuya Wi-Fi IR blaster controlled locally over Wi-Fi: TV, sound bar, heater and anything else the blaster has learned.",
+  "developerName": "soum91",
+  "iconURL": "https://raw.githubusercontent.com/soum91/redshift/main/Redshift/Assets.xcassets/AppIcon.appiconset/icon.png",
+  "tintColor": "FF3B30",
+  "category": "utilities",
+  "website": "https://github.com/soum91/redshift",
+  "sourceURL": "https://raw.githubusercontent.com/soum91/redshift/source/source.json"
+}
