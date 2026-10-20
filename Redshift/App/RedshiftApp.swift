@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct InfraApp: App {
+struct RedshiftApp: App {
     @StateObject private var store = Store.shared
     @Environment(\.scenePhase) private var phase
 

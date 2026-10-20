@@ -265,7 +265,7 @@ final class Store: ObservableObject {
                 }
             }
             if hosts.isEmpty {
-                state = .failed("Nothing on your Wi-Fi answered on Tuya's port. Allow Local Network for Infra in iOS Settings, or type the blaster's IP.")
+                state = .failed("Nothing on your Wi-Fi answered on Tuya's port. Allow Local Network for Redshift in iOS Settings, or type the blaster's IP.")
                 return
             }
             state = .searching("Trying the key on \(hosts.count) Tuya device\(hosts.count == 1 ? "" : "s")…")
@@ -474,7 +474,7 @@ final class Store: ObservableObject {
     // MARK: - Backup
 
     func exportURL() -> URL? {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("Infra remotes.json")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("Redshift remotes.json")
         let enc = JSONEncoder()
         enc.outputFormatting = [.prettyPrinted, .sortedKeys]
         guard let d = try? enc.encode(remotes), (try? d.write(to: url, options: .atomic)) != nil else { return nil }
@@ -485,7 +485,7 @@ final class Store: ObservableObject {
         let scoped = url.startAccessingSecurityScopedResource()
         defer { if scoped { url.stopAccessingSecurityScopedResource() } }
         guard let d = try? Data(contentsOf: url), let list = try? JSONDecoder().decode([Remote].self, from: d) else {
-            show("That file isn't an Infra backup.")
+            show("That file isn't an Redshift backup.")
             return
         }
         for r in list {

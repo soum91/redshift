@@ -33,7 +33,7 @@ struct BlasterPickerView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("Pick your IR blaster").font(.system(size: 30, weight: .bold, design: .rounded))
-                    Text("Infra saves its local key and talks to it over Wi-Fi from here on.")
+                    Text("Redshift saves its local key and talks to it over Wi-Fi from here on.")
                         .foregroundStyle(.secondary)
 
                     if store.loadingDevices {

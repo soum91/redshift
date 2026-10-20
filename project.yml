@@ -1,4 +1,4 @@
-name: Infra
+name: Redshift
 options:
   bundleIdPrefix: com.soum91
   deploymentTarget:
@@ -12,26 +12,26 @@ settings:
     CODE_SIGNING_REQUIRED: NO
     CODE_SIGN_IDENTITY: ""
 targets:
-  Infra:
+  Redshift:
     type: application
     platform: iOS
     sources:
-      - path: Infra
+      - path: Redshift
     info:
-      path: Infra/Info.plist
+      path: Redshift/Info.plist
       properties:
-        CFBundleDisplayName: Infra
+        CFBundleDisplayName: Redshift
         UILaunchScreen: {}
         UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
         UIApplicationSceneManifest:
           UIApplicationSupportsMultipleScenes: false
         ITSAppUsesNonExemptEncryption: false
-        NSLocalNetworkUsageDescription: Infra talks to your IR blaster directly over Wi-Fi to send and learn remote buttons.
-        NSPhotoLibraryAddUsageDescription: Infra saves the Smart Life login QR to Photos so you can pick it from Smart Life's scanner.
+        NSLocalNetworkUsageDescription: Redshift talks to your IR blaster directly over Wi-Fi to send and learn remote buttons.
+        NSPhotoLibraryAddUsageDescription: Redshift saves the Smart Life login QR to Photos so you can pick it from Smart Life's scanner.
         LSApplicationQueriesSchemes: [smartlife, tuyasmart]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.soum91.infra
+        PRODUCT_BUNDLE_IDENTIFIER: com.soum91.redshift
         TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         GENERATE_INFOPLIST_FILE: NO

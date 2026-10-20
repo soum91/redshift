@@ -168,7 +168,7 @@ struct HeaterLayout: View {
             }
             .card()
 
-            Text("IR only goes one way, so Infra can't see whether the heater is on. Check the heater's own display.")
+            Text("IR only goes one way, so Redshift can't see whether the heater is on. Check the heater's own display.")
                 .font(.footnote)
                 .foregroundStyle(.white.opacity(0.4))
                 .multilineTextAlignment(.center)

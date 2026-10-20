@@ -27,34 +27,34 @@ jobs:
         run: |
           set -o pipefail
           xcodebuild \
-            -project Infra.xcodeproj \
-            -scheme Infra \
+            -project Redshift.xcodeproj \
+            -scheme Redshift \
             -configuration Release \
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
             build | tee build.log | grep -E "error:|warning: unre|BUILD (SUCCEEDED|FAILED)" || true
-          test -d build/Build/Products/Release-iphoneos/Infra.app
+          test -d build/Build/Products/Release-iphoneos/Redshift.app
 
       - name: Package IPA
         run: |
           mkdir -p Payload
-          cp -R build/Build/Products/Release-iphoneos/Infra.app Payload/
-          codesign --force --sign - --timestamp=none Payload/Infra.app
-          zip -qr Infra.ipa Payload
+          cp -R build/Build/Products/Release-iphoneos/Redshift.app Payload/
+          codesign --force --sign - --timestamp=none Payload/Redshift.app
+          zip -qr Redshift.ipa Payload
 
       - uses: actions/upload-artifact@v4
         with:
-          name: Infra-ipa
-          path: Infra.ipa
+          name: Redshift-ipa
+          path: Redshift.ipa
 
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
-          name: Infra build ${{ github.run_number }}
+          name: Redshift build ${{ github.run_number }}
           body: |
             Unsigned IPA built from ${{ github.sha }}. Sideload with AltStore, SideStore or Sideloadly.
-          files: Infra.ipa
+          files: Redshift.ipa
           make_latest: true

@@ -21,8 +21,8 @@ struct LoginView: View {
                         Image(systemName: "dot.radiowaves.right")
                             .font(.system(size: 34, weight: .semibold))
                             .foregroundStyle(Theme.accent)
-                        Text("Infra").font(.system(size: 38, weight: .bold, design: .rounded))
-                        Text("Sign in with Smart Life once. Infra only uses it to fetch your blaster's local key; everything after that goes straight over your Wi-Fi.")
+                        Text("Redshift").font(.system(size: 38, weight: .bold, design: .rounded))
+                        Text("Sign in with Smart Life once. Redshift only uses it to fetch your blaster's local key; everything after that goes straight over your Wi-Fi.")
                             .foregroundStyle(.secondary)
                     }
                     .padding(.top, 8)
