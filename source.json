@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.6",
+          "buildVersion": "6",
+          "date": "2026-10-22T17:44:03Z",
+          "localizedDescription": "- Fix blaster search: prove the key on quiet 3.3 blasters, hear Tuya broadcasts, log what each device said (4597f1e)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-6/Redshift-1.0.0-build-6.ipa",
+          "size": 672755,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.5",
           "buildVersion": "5",
           "date": "2026-10-20T20:21:54Z",
@@ -47,11 +56,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.5",
-      "versionDate": "2026-10-20T20:21:54Z",
-      "versionDescription": "- CI: version string carries the build number (<version>.<build>) (87e983b)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-5/Redshift-1.0.0-build-5.ipa",
-      "size": 652061,
+      "version": "1.0.0.6",
+      "versionDate": "2026-10-22T17:44:03Z",
+      "versionDescription": "- Fix blaster search: prove the key on quiet 3.3 blasters, hear Tuya broadcasts, log what each device said (4597f1e)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-6/Redshift-1.0.0-build-6.ipa",
+      "size": 672755,
       "appPermissions": {}
     }
   ],
