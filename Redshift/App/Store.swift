@@ -220,7 +220,7 @@ final class Store: ObservableObject {
             if let result {
                 r = result
             } else {
-                r = try await LocalLink.detect(devId: devId, host: host, localKey: key, knownDPs: [],
+                r = try await LocalLink.detect(devId: devId, host: host, localKey: key, knownDPs: [], probe: IRCommand.probes,
                                                onDPS: onDPS, onClose: onClose)
             }
             link = r.0
@@ -253,45 +253,92 @@ final class Store: ObservableObject {
         return nil
     }
 
-    /// Scans the Wi-Fi for anything on Tuya's port, then tries the blaster's key on all of them at once.
+    /// Listens for the blaster's own broadcast while scanning the Wi-Fi for Tuya's port, then checks the key on
+    /// every candidate at once. Prefers a device that answered with something encrypted with our key.
+    /// What each device said goes into the log (Settings).
     func findOnWiFi() {
         guard let devId = config.devId, let key = config.localKey else { return }
         disconnect()
         state = .searching("Scanning your Wi-Fi…")
         Task {
-            let hosts = await LocalScan.openHosts { n in
+            async let heardList = LocalScan.listen(seconds: 7)
+            let scanned = await LocalScan.openHosts { n in
                 Task { @MainActor in
                     if case .searching = Store.shared.state { Store.shared.state = .searching("Scanning your Wi-Fi… \(n)/254") }
                 }
             }
+            let heardAll = await heardList
+            let heard = heardAll.first { $0.devId == devId }
+            if let heard {
+                note("Blaster announced itself at \(heard.ip), protocol \(heard.version)")
+            } else if !heardAll.isEmpty {
+                note("Heard \(heardAll.count) Tuya broadcast\(heardAll.count == 1 ? "" : "s"), none from this blaster")
+            }
+            var hosts = scanned
+            if let heard { hosts.removeAll { $0 == heard.ip }; hosts.insert(heard.ip, at: 0) }
             if hosts.isEmpty {
                 state = .failed("Nothing on your Wi-Fi answered on Tuya's port. Allow Local Network for Redshift in iOS Settings, or type the blaster's IP.")
                 return
             }
-            state = .searching("Trying the key on \(hosts.count) Tuya device\(hosts.count == 1 ? "" : "s")…")
-            let found: (String, Double)? = await withTaskGroup(of: (String, Double)?.self) { group in
+            state = .searching("Checking the key on \(hosts.count) Tuya device\(hosts.count == 1 ? "" : "s")…")
+
+            if let heard, let r = try? await LocalLink.detectFull(devId: devId, host: heard.ip, localKey: key, knownDPs: [], timeout: 3,
+                                                                    versions: [heard.version] + [3.3, 3.4, 3.5].filter { $0 != heard.version },
+                                                                    probe: IRCommand.probes, onDPS: { _ in }, onClose: { _ in }) {
+                await r.link.close()
+                useFound(heard.ip, r.link.version)
+                return
+            }
+
+            var strong: (String, Double)?
+            var weak: [(String, Double)] = []
+            var lines: [String] = []
+            await withTaskGroup(of: (String, Double?, KeyProof?, String?).self) { group in
                 for host in hosts {
                     group.addTask {
-                        guard let r = try? await LocalLink.detect(devId: devId, host: host, localKey: key, knownDPs: [],
-                                                                  onDPS: { _ in }, onClose: { _ in }) else { return nil }
-                        await r.0.close()
-                        return (host, r.0.version)
+                        do {
+                            let r = try await LocalLink.detectFull(devId: devId, host: host, localKey: key, knownDPs: [], timeout: 3,
+                                                                   probe: IRCommand.probes, onDPS: { _ in }, onClose: { _ in })
+                            await r.link.close()
+                            return (host, r.link.version, r.proof, nil)
+                        } catch {
+                            return (host, nil, nil, LocalLink.short(error))
+                        }
                     }
                 }
-                for await r in group {
-                    if let r { group.cancelAll(); return r }
+                for await (host, version, proof, err) in group {
+                    if let version, let proof {
+                        lines.append("\(host): took the key (protocol \(version)\(proof == .weak ? ", acknowledged only" : ""))")
+                        if proof == .strong, strong == nil { strong = (host, version) } else if proof == .weak { weak.append((host, version)) }
+                    } else {
+                        lines.append("\(host): \(err ?? "no answer")")
+                    }
                 }
-                return nil
             }
-            if let found {
-                config.host = found.0
-                config.version = found.1
-                note("Found the blaster at \(found.0)")
-                connect()
+            lines.forEach { note($0) }
+            if let strong {
+                useFound(strong.0, strong.1)
+            } else if weak.count == 1 {
+                useFound(weak[0].0, weak[0].1)
+            } else if weak.count > 1 {
+                state = .failed("\(weak.count) devices acknowledged but none proved the key (\(weak.map { $0.0 }.joined(separator: ", "))). Type the blaster's IP from your router.")
             } else {
-                state = .failed("Found \(hosts.count) Tuya device\(hosts.count == 1 ? "" : "s") but none took the blaster's key. If you re-paired it, refresh the key.")
+                var why = "Found \(hosts.count) Tuya device\(hosts.count == 1 ? "" : "s") but none took the blaster's key."
+                if let d = devices.first(where: { $0.id == devId }) {
+                    if d.isSub { why += " Smart Life says this blaster is paired through a hub, so it has no Wi-Fi connection of its own." }
+                    else if !d.online { why += " Smart Life says the blaster is offline." }
+                }
+                why += " Close Smart Life and the other blaster apps, then try again. What each device said is in the log."
+                state = .failed(why)
             }
         }
+    }
+
+    private func useFound(_ host: String, _ version: Double) {
+        config.host = host
+        config.version = version
+        note("Found the blaster at \(host)")
+        connect()
     }
 
     func setHost(_ host: String) {
