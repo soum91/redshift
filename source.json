@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.7",
+          "buildVersion": "7",
+          "date": "2026-10-25T13:31:17Z",
+          "localizedDescription": "- Add configurable IR buttons to Control Center and Lock Screen (17f1541)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-7/Redshift-1.0.0-build-7.ipa",
+          "size": 784725,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.6",
           "buildVersion": "6",
           "date": "2026-10-22T17:44:03Z",
@@ -56,11 +65,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.6",
-      "versionDate": "2026-10-22T17:44:03Z",
-      "versionDescription": "- Fix blaster search: prove the key on quiet 3.3 blasters, hear Tuya broadcasts, log what each device said (4597f1e)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-6/Redshift-1.0.0-build-6.ipa",
-      "size": 672755,
+      "version": "1.0.0.7",
+      "versionDate": "2026-10-25T13:31:17Z",
+      "versionDescription": "- Add configurable IR buttons to Control Center and Lock Screen (17f1541)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-7/Redshift-1.0.0-build-7.ipa",
+      "size": 784725,
       "appPermissions": {}
     }
   ],
