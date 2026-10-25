@@ -54,6 +54,11 @@ jobs:
           # Sideloaders (FlareStore etc.) only compare the version string, so make it <version>.<build>.
           /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION.$BUILD" Payload/Redshift.app/Info.plist
           codesign --force --sign - --timestamp=none Payload/Redshift.app
+          EXT="Payload/Redshift.app/PlugIns/RedshiftWidget.appex"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $BUILD" "$EXT/Info.plist"
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $VERSION.$BUILD" "$EXT/Info.plist"
+          codesign --force --sign - --timestamp=none --entitlements "$GITHUB_WORKSPACE/RedshiftWidget/RedshiftWidget.entitlements" "$EXT"
+          codesign --force --sign - --timestamp=none --entitlements "$GITHUB_WORKSPACE/Redshift/Redshift.entitlements" "Payload/Redshift.app"
           IPA="$APP-$VERSION-build-$BUILD.ipa"
           zip -qr "$IPA" Payload
           echo "VERSION=$VERSION" >> "$GITHUB_ENV"

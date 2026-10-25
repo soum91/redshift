@@ -44,7 +44,7 @@ final class Store: ObservableObject {
     static let shared = Store()
 
     @Published var config = BlasterConfig.stored { didSet { if config != oldValue { BlasterConfig.stored = config } } }
-    @Published var remotes: [Remote] = RemoteStore.load() { didSet { RemoteStore.save(remotes) } }
+    @Published var remotes: [Remote] = RemoteStore.load() { didSet { RemoteStore.save(remotes); publishWidgetButtons() } }
     @Published var selected: UUID? {
         didSet { UserDefaults.standard.set(selected?.uuidString, forKey: "selectedRemote") }
     }
@@ -74,6 +74,7 @@ final class Store: ObservableObject {
         } else {
             selected = remotes.first?.id
         }
+        publishWidgetButtons()
     }
 
     var current: Remote? { remotes.first { $0.id == selected } ?? remotes.first }
