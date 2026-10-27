@@ -1,4 +1,5 @@
 import SwiftUI
+import AppIntents
 
 @main
 struct RedshiftApp: App {
@@ -34,5 +35,18 @@ struct RootView: View {
             }
         }
         .animation(.easeInOut, value: store.config.isReady)
+    }
+}
+
+
+/// Assign the desired learned IR button once in Shortcuts, then pin its
+/// Shortcut to Control Center for a real visible control.
+struct RedshiftShortcuts: AppShortcutsProvider {
+    static var shortcutTileColor: ShortcutTileColor = .red
+
+    static var appShortcuts: [AppShortcut] {
+        AppShortcut(intent: SendIRButtonIntent(), phrases: [
+            "Send remote button with \(.applicationName)",
+        ], shortTitle: "Remote Button", systemImageName: "av.remote.fill")
     }
 }
