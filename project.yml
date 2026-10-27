@@ -32,6 +32,10 @@ targets:
         ITSAppUsesNonExemptEncryption: false
         NSLocalNetworkUsageDescription: Redshift talks to your IR blaster directly
           over Wi-Fi to send and learn remote buttons.
+        NSBonjourServices:
+        - _afterglow._tcp
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
         NSPhotoLibraryAddUsageDescription: Redshift saves the Smart Life login QR
           to Photos so you can pick it from Smart Life's scanner.
         LSApplicationQueriesSchemes:

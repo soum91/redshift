@@ -65,6 +65,20 @@ struct SettingsView: View {
                     Text("Smart Life is only used to fetch the key. Every button press goes straight to the blaster on your Wi-Fi, even with the internet down. If you re-pair the blaster in Smart Life its key changes, so refresh it here.")
                 }
 
+                Section {
+                    NavigationLink {
+                        HomeBridgeView().environmentObject(store)
+                    } label: {
+                        HStack {
+                            Label("Apple Home bridge", systemImage: "homekit")
+                            Spacer()
+                            Text(HomeBridgeLink.stored.isSet ? "Paired" : "Set up").foregroundStyle(.secondary)
+                        }
+                    }
+                } footer: {
+                    Text("Puts remotes (like the heater's power) in the Home app through Afterglow's ESP32 bridge.")
+                }
+
                 Section("Remotes") {
                     if let url = store.exportURL() {
                         ShareLink(item: url) { Label("Export backup", systemImage: "square.and.arrow.up") }
