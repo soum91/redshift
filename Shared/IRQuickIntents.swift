@@ -24,6 +24,11 @@ struct IRButtonWidgetConfig: WidgetConfigurationIntent {
     @Parameter(title: "Button") var button: IRButtonEntity?
 }
 struct SendIRButtonIntent: LiveActivityIntent {
+    #if WIDGET_EXTENSION
+    // The widget extension cannot be launched to run intents on this iOS, so
+    // Shortcuts must only see (and run) the copy inside the app.
+    static let isDiscoverable = false
+    #endif
     static var title: LocalizedStringResource = "Send Remote Button"
     @Parameter(title: "Button") var button: IRButtonEntity?
     init() {}
