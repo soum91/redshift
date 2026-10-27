@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.11",
+          "buildVersion": "11",
+          "date": "2026-10-27T22:49:32Z",
+          "localizedDescription": "- Fix main-actor access in the Apple Home picker (1eb242f)\n- Send IR remotes to Apple Home through Afterglow's bridge (fd577eb)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-11/Redshift-1.0.0-build-11.ipa",
+          "size": 854019,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.9",
           "buildVersion": "9",
           "date": "2026-10-27T04:44:35Z",
@@ -83,11 +92,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.9",
-      "versionDate": "2026-10-27T04:44:35Z",
-      "versionDescription": "- Expose configurable IR remote button via Apple Shortcuts (7648711)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-9/Redshift-1.0.0-build-9.ipa",
-      "size": 789880,
+      "version": "1.0.0.11",
+      "versionDate": "2026-10-27T22:49:32Z",
+      "versionDescription": "- Fix main-actor access in the Apple Home picker (1eb242f)\n- Send IR remotes to Apple Home through Afterglow's bridge (fd577eb)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-11/Redshift-1.0.0-build-11.ipa",
+      "size": 854019,
       "appPermissions": {}
     }
   ],
