@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.8",
+          "buildVersion": "8",
+          "date": "2026-10-27T01:38:16Z",
+          "localizedDescription": "- Run Shortcuts actions in the app instead of the widget extension (244a98a)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-8/Redshift-1.0.0-build-8.ipa",
+          "size": 784651,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.7",
           "buildVersion": "7",
           "date": "2026-10-25T13:31:17Z",
@@ -65,11 +74,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.7",
-      "versionDate": "2026-10-25T13:31:17Z",
-      "versionDescription": "- Add configurable IR buttons to Control Center and Lock Screen (17f1541)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-7/Redshift-1.0.0-build-7.ipa",
-      "size": 784725,
+      "version": "1.0.0.8",
+      "versionDate": "2026-10-27T01:38:16Z",
+      "versionDescription": "- Run Shortcuts actions in the app instead of the widget extension (244a98a)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-8/Redshift-1.0.0-build-8.ipa",
+      "size": 784651,
       "appPermissions": {}
     }
   ],
