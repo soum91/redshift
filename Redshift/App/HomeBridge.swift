@@ -144,6 +144,7 @@ final class HomeBridgeFinder: ObservableObject {
 
 /// Which remotes and buttons go to Apple Home. Remote id -> key ids. "power" becomes an on/off
 /// switch; anything else becomes a one-tap button.
+@MainActor
 enum HomeSelection {
     static var stored: [String: [String]] {
         get {
