@@ -76,7 +76,7 @@ struct SettingsView: View {
                         }
                     }
                 } footer: {
-                    Text("Puts remotes (like the heater's power) in the Home app through Afterglow's ESP32 bridge.")
+                    Text("Puts remotes (like the heater's power) in the Home app through the Keystone Bridge (ESP32).")
                 }
 
                 Section("Remotes") {

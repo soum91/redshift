@@ -2,7 +2,7 @@ import Foundation
 import Network
 import SwiftUI
 
-/// Afterglow's ESP32 bridge puts devices in Apple Home. Redshift pairs with it on its own token and
+/// the Keystone Bridge (ESP32) puts devices in Apple Home. Redshift pairs with it on its own token and
 /// sends the blaster's address and key plus the IR codes for the buttons you pick. The bridge fires
 /// them itself after that, so Home works with this phone asleep or away.
 struct HomeBridgeLink: Codable, Equatable {
@@ -39,7 +39,7 @@ enum HomeBridgeAPI {
         req.timeoutInterval = 4
         let (data, _) = try await URLSession.shared.data(for: req)
         guard let obj = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-              obj["app"] as? String == "afterglow-bridge" else { throw HomeBridgeError.message("That isn't an Afterglow bridge.") }
+              obj["app"] as? String == "afterglow-bridge" else { throw HomeBridgeError.message("That isn't a Keystone Bridge.") }
         return obj
     }
 
@@ -50,7 +50,7 @@ enum HomeBridgeAPI {
         req.timeoutInterval = 5
         let (data, resp) = try await URLSession.shared.data(for: req)
         if (resp as? HTTPURLResponse)?.statusCode == 409 {
-            throw HomeBridgeError.message("The bridge is already paired with Redshift on another install. In Afterglow › Settings › Apple Home bridge, tap Reset Redshift pairing, then pair here again.")
+            throw HomeBridgeError.message("The bridge is already paired with Redshift on another install. In Keystone › Bridge, tap Reset next to Redshift, then pair here again.")
         }
         guard let obj = try JSONSerialization.jsonObject(with: data) as? [String: Any], let t = obj["token"] as? String else {
             throw HomeBridgeError.message("The bridge didn't hand out a token. Update its firmware from Afterglow.")
@@ -197,7 +197,7 @@ struct HomeBridgeView: View {
     var body: some View {
         List {
             Section {
-                Text("Afterglow's ESP32 bridge can put IR remotes in Apple Home. Power becomes an on/off switch; other buttons become one-tap buttons. IR can't report back, so the switch shows what was last sent, not what the device is really doing. The TV and sound bar already have proper tiles (Afterglow and Subwave), so leave those off unless you want extra buttons.")
+                Text("the Keystone Bridge (ESP32) can put IR remotes in Apple Home. Power becomes an on/off switch; other buttons become one-tap buttons. IR can't report back, so the switch shows what was last sent, not what the device is really doing. The TV and sound bar already have proper tiles (Afterglow and Subwave), so leave those off unless you want extra buttons.")
                     .font(.footnote)
             }
 
@@ -264,7 +264,7 @@ struct HomeBridgeView: View {
                 } header: {
                     Text("Pair")
                 } footer: {
-                    Text("No bridge yet? Set one up from Afterglow › Settings › Apple Home bridge.")
+                    Text("No bridge yet? Set one up with the Keystone app.")
                 }
             }
             if let status { Section { Text(status).font(.footnote) } }
