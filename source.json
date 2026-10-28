@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.12",
+          "buildVersion": "12",
+          "date": "2026-10-28T04:02:36Z",
+          "localizedDescription": "- Call the bridge Keystone Bridge and point to the Keystone app (0811feb)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-12/Redshift-1.0.0-build-12.ipa",
+          "size": 854255,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.11",
           "buildVersion": "11",
           "date": "2026-10-27T22:49:32Z",
@@ -92,11 +101,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.11",
-      "versionDate": "2026-10-27T22:49:32Z",
-      "versionDescription": "- Fix main-actor access in the Apple Home picker (1eb242f)\n- Send IR remotes to Apple Home through Afterglow's bridge (fd577eb)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-11/Redshift-1.0.0-build-11.ipa",
-      "size": 854019,
+      "version": "1.0.0.12",
+      "versionDate": "2026-10-28T04:02:36Z",
+      "versionDescription": "- Call the bridge Keystone Bridge and point to the Keystone app (0811feb)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-12/Redshift-1.0.0-build-12.ipa",
+      "size": 854255,
       "appPermissions": {}
     }
   ],
