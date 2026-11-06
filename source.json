@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.14",
+          "buildVersion": "14",
+          "date": "2026-11-06T20:38:32Z",
+          "localizedDescription": "- Enforce visible installed version/build across app releases (19fb536)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-14/Redshift-1.0.0-build-14.ipa",
+          "size": 854679,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.13",
           "buildVersion": "13",
           "date": "2026-11-06T20:20:31Z",
@@ -110,11 +119,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.13",
-      "versionDate": "2026-11-06T20:20:31Z",
-      "versionDescription": "- Show actual installed app version and build in UI (e45fc9e)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-13/Redshift-1.0.0-build-13.ipa",
-      "size": 854630,
+      "version": "1.0.0.14",
+      "versionDate": "2026-11-06T20:38:32Z",
+      "versionDescription": "- Enforce visible installed version/build across app releases (19fb536)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-14/Redshift-1.0.0-build-14.ipa",
+      "size": 854679,
       "appPermissions": {}
     }
   ],
