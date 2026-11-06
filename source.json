@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.13",
+          "buildVersion": "13",
+          "date": "2026-11-06T20:20:31Z",
+          "localizedDescription": "- Show actual installed app version and build in UI (e45fc9e)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-13/Redshift-1.0.0-build-13.ipa",
+          "size": 854630,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.12",
           "buildVersion": "12",
           "date": "2026-10-28T04:02:36Z",
@@ -101,11 +110,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.12",
-      "versionDate": "2026-10-28T04:02:36Z",
-      "versionDescription": "- Call the bridge Keystone Bridge and point to the Keystone app (0811feb)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-12/Redshift-1.0.0-build-12.ipa",
-      "size": 854255,
+      "version": "1.0.0.13",
+      "versionDate": "2026-11-06T20:20:31Z",
+      "versionDescription": "- Show actual installed app version and build in UI (e45fc9e)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-13/Redshift-1.0.0-build-13.ipa",
+      "size": 854630,
       "appPermissions": {}
     }
   ],
