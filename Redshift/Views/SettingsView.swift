@@ -93,7 +93,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    row("Version", (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String) ?? "?")
+                    row("Installed version", "\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown") (build \(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "Unknown"))")
                 } footer: {
                     Text("Talks to the blaster with Tuya's local protocol. Unofficial, not affiliated with Tuya.")
                 }
