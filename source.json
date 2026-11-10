@@ -20,6 +20,15 @@
       "screenshotURLs": [],
       "versions": [
         {
+          "version": "1.0.0.15",
+          "buildVersion": "15",
+          "date": "2026-11-10T08:09:20Z",
+          "localizedDescription": "- Enforce pseudonymous author metadata and owner privacy (6098e97)\n- docs: require verified diagnostic exports [skip ci] (220584d)\n- docs: require verified diagnostic exports [skip ci] (6dfb796)\n- docs: require verified diagnostics Copy, Share and Files export [skip ci] (c6cb94e)\n- docs: require verified diagnostics Copy, Share and Files export [skip ci] (aedfb47)\n- ci: separate release tracks when deriving factual changes [skip ci] (8666412)\n- ci: reconcile bot-created releases with factual notes [skip ci] (6254001)\n- ci: verify and record actual release changes [skip ci] (cf7b508)\n- docs: require evidence-based release changelog [skip ci] (fccce01)\n- docs: initialize factual release changelog [skip ci] (b91757f)",
+          "downloadURL": "https://github.com/soum91/redshift/releases/download/build-15/Redshift-1.0.0-build-15.ipa",
+          "size": 854734,
+          "minOSVersion": "17.0"
+        },
+        {
           "version": "1.0.0.14",
           "buildVersion": "14",
           "date": "2026-11-06T20:38:32Z",
@@ -119,11 +128,11 @@
           "minOSVersion": "17.0"
         }
       ],
-      "version": "1.0.0.14",
-      "versionDate": "2026-11-06T20:38:32Z",
-      "versionDescription": "- Enforce visible installed version/build across app releases (19fb536)",
-      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-14/Redshift-1.0.0-build-14.ipa",
-      "size": 854679,
+      "version": "1.0.0.15",
+      "versionDate": "2026-11-10T08:09:20Z",
+      "versionDescription": "- Enforce pseudonymous author metadata and owner privacy (6098e97)\n- docs: require verified diagnostic exports [skip ci] (220584d)\n- docs: require verified diagnostic exports [skip ci] (6dfb796)\n- docs: require verified diagnostics Copy, Share and Files export [skip ci] (c6cb94e)\n- docs: require verified diagnostics Copy, Share and Files export [skip ci] (aedfb47)\n- ci: separate release tracks when deriving factual changes [skip ci] (8666412)\n- ci: reconcile bot-created releases with factual notes [skip ci] (6254001)\n- ci: verify and record actual release changes [skip ci] (cf7b508)\n- docs: require evidence-based release changelog [skip ci] (fccce01)\n- docs: initialize factual release changelog [skip ci] (b91757f)",
+      "downloadURL": "https://github.com/soum91/redshift/releases/download/build-15/Redshift-1.0.0-build-15.ipa",
+      "size": 854734,
       "appPermissions": {}
     }
   ],
